@@ -39,8 +39,12 @@ public class Generic {
         
         @EventHandler
         public void load(FMLInitializationEvent event) {
+        	ItemStack circuit = Items.getItem("electronicCircuit");
         	
-        	Recipes.extractor.addRecipe(new ItemStack(Item.pocketSundial), Items.getItem("electronicCircuit"));
+        	// #### API Version: 1.118.401 ####
+        	/* Recipes.extractor.addRecipe(new ItemStack(Item.pocketSundial), Items.getItem("electronicCircuit")); */
+        	// #### Experimental API Version: 2.0.45 ####
+        	Recipes.extractor.addRecipe(new ItemStack(Item.pocketSundial), null, circuit);
         	
             proxy.registerRenderers();
         }
